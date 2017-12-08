@@ -1,0 +1,75 @@
+git add xxx --> 添加到暂存区
+
+git commit -m "add xxx file" --> 提交本次修改
+
+git push origin master --> 推送到远程仓库 
+
+3个步骤：
+工作区 --> 暂存区 --> 本地仓库 --> 远程仓库
+
+git add 把所有文件放入暂存区 
+
+git commit -m"comment" 把所有文件从暂存区放入本地仓库
+
+git push  把所有文件从本地仓库推送到远程仓库
+
+-------------------------------------
+
+5 种状态				对应4个区
+
+	未修改（Origin）
+
+	已修改（Modified）   
+
+	已暂存（Staged）
+
+	已提交（Committed)
+
+	已推送（Pushed)
+
+
+几种回退方法：
+
+
+已修改，未暂存（还没有 git add）
+
+git diff 查看
+ 
+git checkout
+ 或者
+git reset --hard 回退
+
+
+
+已暂存，未提交 (执行了git add 但是还没执行 git commit -m"comment")
+
+git diff --cached 查看
+
+git reset (退回到 git add 之前的版本)
+git checkout
+或者
+git reset --hard(完全回复到未修改状态)
+
+
+
+已提交，未推送(执行了 git add 而且执行了git commit -m"comment"但是没有之行git push)
+
+git diff master origin/master 查看
+
+git reset --hard origin/master 
+
+已经推送 (手太快！  已经git push 过了)
+
+git reset --hard HEAD^
+
+git push -f
+
+
+
+
+
+
+
+
+
+
